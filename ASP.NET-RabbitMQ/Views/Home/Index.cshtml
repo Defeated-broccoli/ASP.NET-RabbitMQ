@@ -1,0 +1,25 @@
+﻿@model Mail
+
+<form method="post" asp-controller="Home" asp-action="Index" enctype="multipart/form-data" class="mt-5">
+
+    <div class="form-group">
+        <label asp-for="Receiver" class="font-weight-bold">Recipient's email address</label>
+        <input asp-for="Receiver" name="Receiver" class="form-control" />
+        <span asp-validation-for="Receiver" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Subject" class="font-weight-bold">Subject</label>
+        <input asp-for="Subject" name="Subject" class="form-control" />
+        <span asp-validation-for="Subject" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Body" class="font-weight-bold">Message</label>
+        <textarea asp-for="Body" name="Body" class="form-control"></textarea>
+        <span asp-validation-for="Body" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Send</button>
+
+</form>
